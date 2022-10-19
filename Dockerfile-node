@@ -1,0 +1,14 @@
+FROM ubuntu:jammy
+
+LABEL maintainer="mhteaching2703@gmail.com"
+
+COPY src /src
+
+# Install scripts
+RUN /src/install-apt.sh \
+    && /src/basic_tools.sh \
+    && cd /src \
+    && curl -o setupnode18.sh -fsSL https://deb.nodesource.com/setup_18.x \
+    && /bin/sh /src/setupnode18.sh \
+    && apt-get install -y nodejs \
+	&& npm install nodemon --global

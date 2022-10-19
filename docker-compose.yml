@@ -1,0 +1,21 @@
+# https://github.com/nodejs/docker-node/blob/main/README.md#how-to-use-this-image  
+# https://docs.docker.com/get-started/08_using_compose/
+version: '3.9'
+
+services:
+    ubuntu:
+        container_name: nodejs
+        build:
+            dockerfile: Dockerfile-node        
+        command: ["sleep","infinity"]
+        volumes:
+            - ./app:/home/node/app
+        # port 8085 has been chosen with consideration for https://github.com/Digital-Media/fhooe-web-dock + fhooe-mongo-dock
+        # which may run in parallel.
+        ports:
+            - 3000:3000
+volumes:
+    nodedata:
+networks:
+    default:
+        name: nodenet
