@@ -13,7 +13,7 @@ services:
         # port 8085 has been chosen with consideration for https://github.com/Digital-Media/fhooe-web-dock + fhooe-mongo-dock
         # which may run in parallel.
         ports:
-            - 3030:3000
+            - 3000:3000
 volumes:
     nodedata:
 networks:
