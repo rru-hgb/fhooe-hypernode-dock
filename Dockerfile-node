@@ -12,4 +12,5 @@ RUN cd /src \
     && curl -o setupnode18.sh -fsSL https://deb.nodesource.com/setup_18.x \
     && /bin/sh /src/setupnode18.sh \
     && apt-get install -y nodejs \
-    && npm install nodemon --global
+    && npm install nodemon --global \
+    && npm install express-generator --global

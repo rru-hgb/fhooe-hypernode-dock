@@ -3,20 +3,41 @@
 version: '3.9'
 
 services:
+    mongo:
+        image: mongo
+        container_name: mongodb
+        volumes:
+            - mongodata:/data/db
+            - mongodata:/data/configdb
+        ports:
+            - "27017:27017"
+    mongo-express:
+        image: mongo-express
+        container_name: mongo-express
+        environment:
+            - ME_CONFIG_MONGODB_SERVER=mongo
+            - ME_CONFIG_MONGODB_PORT=27017
+            - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+            - ME_CONFIG_MONGODB_AUTH_DATABASE=admin
+        depends_on:
+            - mongo
+        ports:
+          - "8081:8081"
     ubuntu:
         container_name: node
         build:
             dockerfile: Dockerfile-node        
         command: ["sleep","infinity"]
         volumes:
-            - ./app:/home/node/app
-        # port 8085 has been chosen with consideration for https://github.com/Digital-Media/fhooe-web-dock + fhooe-mongo-dock
-        # which may run in parallel.
+            - ./node:/home/node
+        depends_on:
+            - mongo
         ports:
-            - 3030:3030
+            - 3000:3000
             - 5173:5173
 volumes:
     nodedata:
+    mongodata:
 networks:
     default:
         name: nodenet
