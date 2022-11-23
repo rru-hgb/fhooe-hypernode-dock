@@ -9,8 +9,8 @@ services:
         volumes:
             - mongodata:/data/db
             - mongodata:/data/configdb
-        #ports:
-        #    - 27018:27017
+        ports:
+            - 22222:27017
     ubuntu:
         container_name: mevn-node
         build:
