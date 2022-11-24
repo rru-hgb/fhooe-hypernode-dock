@@ -11,17 +11,17 @@ git clone https://github.com/rru-hgb/fhooe-mevn-dock.git
 
 ## Docker
 
-```
+```shell
 cd fhooe-mevn-dock
 docker compose up -d
 ```
 Access mongodb via commandline in container
-```
-docker exec -it mevn-mongodb /bin/bash -c "mongosh"
+```shell
+docker exec -it mevndb /bin/bash -c "mongosh"
 ```
 Access node container
-```
-docker exec -it mevn-node /bin/bash
+```shell
+docker exec -it mevn /bin/bash
 ```
 Subfolder node/ is mapped to /home/node in node container. 
 

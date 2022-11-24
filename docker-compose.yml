@@ -5,14 +5,14 @@ version: '3.9'
 services:
     mongo:
         image: mongo
-        container_name: mevn-mongodb
+        container_name: mevndb
         volumes:
             - mongodata:/data/db
             - mongodata:/data/configdb
         ports:
             - 22222:27017
     ubuntu:
-        container_name: mevn-node
+        container_name: mevn
         build:
             dockerfile: Dockerfile-node        
         command: ["sleep","infinity"]
