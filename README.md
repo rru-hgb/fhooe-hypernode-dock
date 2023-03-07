@@ -1,6 +1,6 @@
-# fhooe-mevn-dock
+# fhooe-onm-dock
 
-This repository provides a Docker environment for web development designed for the use in web development classes at the [Upper Austria University of Applied Sciences (FH Oberösterreich), Hagenberg Campus](https://www.fh-ooe.at/en/hagenberg-campus/).
+This repository provides a Docker environment for web development designed for the use in Online Multimedia class at the [Upper Austria University of Applied Sciences (FH Oberösterreich), Hagenberg Campus](https://www.fh-ooe.at/en/hagenberg-campus/).
 
 ## Installation
 
