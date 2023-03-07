@@ -5,14 +5,14 @@ version: '3.9'
 services:
     mongo:
         image: mongo
-        container_name: mevndb
+        container_name: onmdb
         volumes:
-            - mongodata:/data/db
-            - mongodata:/data/configdb
+            - onm_mongodata:/data/db
+            - onm_mongodata:/data/configdb
         ports:
             - 22222:27017
     ubuntu:
-        container_name: mevn
+        container_name: onm
         build:
             dockerfile: Dockerfile-node        
         command: ["sleep","infinity"]
@@ -25,7 +25,7 @@ services:
             - 5555:5173
     mongo-express:
         image: mongo-express
-        container_name: mevn-mongo-express
+        container_name: onm-mongo-express
         environment:
             - ME_CONFIG_MONGODB_SERVER=mongo
             - ME_CONFIG_MONGODB_PORT=27017
@@ -36,7 +36,7 @@ services:
         ports:
             - 9999:8081
 volumes:
-    mongodata:
+    onm_mongodata:
 networks:
     default:
-        name: mevn-nodenet
+        name: onm-nodenet

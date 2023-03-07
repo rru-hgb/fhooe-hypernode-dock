@@ -1,6 +1,6 @@
 FROM ubuntu:jammy
 
-LABEL maintainer="mhteaching2703@gmail.com"
+LABEL maintainer="rimbert.rudisch-sommer@fh-hagenberg.at"
 
 COPY src /src
 
@@ -13,4 +13,6 @@ RUN cd /src \
     && /bin/sh /src/setupnode18.sh \
     && apt-get install -y nodejs \
     && npm install nodemon --global \
-    && npm install express-generator --global
+    && npm install express-generator --global \
+    && npm install typescript -g \
+    && npm install ts-node -g

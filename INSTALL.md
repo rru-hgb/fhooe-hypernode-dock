@@ -1,4 +1,4 @@
-# Installation of fhooe-mongo-dock
+# Installation of fhooe-onm-dock
 
 ## Get repo
 
@@ -6,22 +6,22 @@ Install it in any path on your computer.
 Open Powershell (PS) or other Terminal (prompt may be different in this case).
 
 ```shell
-git clone https://github.com/rru-hgb/fhooe-mevn-dock.git
+git clone https://github.com/rru-hgb/fhooe-onm-dock.git
 ```
 
 ## Docker
 
 ```shell
-cd fhooe-mevn-dock
+cd fhooe-onm-dock
 docker compose up -d
 ```
 Access mongodb via commandline in container
 ```shell
-docker exec -it mevndb /bin/bash -c "mongosh"
+docker exec -it onmdb /bin/bash -c "mongosh"
 ```
 Access node container
 ```shell
-docker exec -it mevn /bin/bash
+docker exec -it onm /bin/bash
 ```
 Subfolder node/ is mapped to /home/node in node container. 
 
