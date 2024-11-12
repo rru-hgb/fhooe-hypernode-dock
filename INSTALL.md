@@ -1,4 +1,4 @@
-# Installation of fhooe-onm-dock
+# Installation of fhooe-hypjs-dock
 
 ## Get repo
 
@@ -6,13 +6,13 @@ Install it in any path on your computer.
 Open Powershell (PS) or other Terminal (prompt may be different in this case).
 
 ```shell
-git clone https://github.com/rru-hgb/fhooe-onm-dock.git
+git clone https://github.com/rru-hgb/fhooe-hypjs-dock.git
 ```
 
 ## Docker
 
 ```shell
-cd fhooe-onm-dock
+cd fhooe-hypjs-dock
 docker compose up -d
 ```
 Access mongodb via commandline in container
@@ -21,7 +21,7 @@ docker exec -it onmdb /bin/bash -c "mongosh"
 ```
 Access node container
 ```shell
-docker exec -it onm /bin/bash
+docker exec -it hypjs /bin/bash
 ```
 Subfolder node/ is mapped to /home/node in node container. 
 
@@ -31,9 +31,9 @@ Subfolder node/ is mapped to /home/node in node container.
 Access them via localhost:nnnn
 ```
 22222 MongoDB 
-9999 Mongo-Express
 3333 Express
 5555 Vite Dev Server
+9999 Mongo-Express
 ```
 
 ### Internal Mongo Connection:

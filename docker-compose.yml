@@ -1,18 +1,17 @@
-# https://github.com/nodejs/docker-node/blob/main/README.md#how-to-use-this-image  
-# https://docs.docker.com/get-started/08_using_compose/
-version: '3.9'
-
 services:
     mongo:
         image: mongo
-        container_name: onmdb
+        container_name: hypernode_mongodb
+        environment: 
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: geheim!
         volumes:
-            - onm_mongodata:/data/db
-            - onm_mongodata:/data/configdb
+            - hypernode_mongodata:/data/db
+            - hypernode_mongodata:/data/configdb
         ports:
-            - 22222:27017
+            - 22222:27017   # mongodb
     ubuntu:
-        container_name: onm
+        container_name: hypernode
         build:
             dockerfile: Dockerfile-node        
         command: ["sleep","infinity"]
@@ -21,22 +20,26 @@ services:
         depends_on:
             - mongo
         ports:
-            - 3333:3000
-            - 5555:5173
+            - 3333:3000     # express
+            - 5555:5173     # vite dev
     mongo-express:
         image: mongo-express
-        container_name: onm-mongo-express
+        container_name: hypernode-mongo-express
         environment:
-            - ME_CONFIG_MONGODB_SERVER=mongo
-            - ME_CONFIG_MONGODB_PORT=27017
-            - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
-            - ME_CONFIG_MONGODB_AUTH_DATABASE=admin
+            ME_CONFIG_BASICAUTH_USERNAME: ''
+            ME_CONFIG_BASICAUTH_PASSWORD: ''
+            ME_CONFIG_MONGODB_SERVER: mongo
+            ME_CONFIG_MONGODB_PORT: 27017
+            ME_CONFIG_MONGODB_ADMINUSERNAME: root
+            ME_CONFIG_MONGODB_ADMINPASSWORD: geheim!
+        #    - ME_CONFIG_MONGODB_ENABLE_ADMIN=root
+        #    - ME_CONFIG_MONGODB_AUTH_DATABASE=admin
         depends_on:
             - mongo
         ports:
-            - 9999:8081
+            - 9999:8081     # mongo-express
 volumes:
-    onm_mongodata:
+    hypernode_mongodata:
 networks:
     default:
-        name: onm-nodenet
+        name: hypernode-nodenet

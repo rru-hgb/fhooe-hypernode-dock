@@ -1,4 +1,4 @@
-FROM ubuntu:jammy
+FROM ubuntu:noble
 
 LABEL maintainer="rimbert.rudisch-sommer@fh-hagenberg.at"
 
@@ -9,10 +9,12 @@ RUN cd /src \
     && chmod 755 *.sh \
     && /src/install-apt.sh \
     && /src/basic_tools.sh \
-    && curl -o setupnode20.sh -fsSL https://deb.nodesource.com/setup_20.x \
-    && /bin/sh /src/setupnode20.sh \
+    && curl -o setupnodelts.sh -fsSL https://deb.nodesource.com/setup_lts.x \
+    && /bin/sh /src/setupnodelts.sh \
     && apt-get install -y nodejs \
-    && npm install nodemon --global \
-    && npm install express-generator --global \
+    && npm install nodemon -g \
+    && npm install express-generator -g \
     && npm install typescript -g \
-    && npm install ts-node -g
+    && npm install ts-node -g \
+    && npm install yarn -g \
+    && npm install jsdoc -g
