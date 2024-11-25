@@ -6,22 +6,22 @@ Install it in any path on your computer.
 Open Powershell (PS) or other Terminal (prompt may be different in this case).
 
 ```shell
-git clone https://github.com/rru-hgb/fhooe-hypjs-dock.git
+git clone https://github.com/rru-hgb/fhooe-hypernode-dock.git
 ```
 
 ## Docker
 
 ```shell
-cd fhooe-hypjs-dock
+cd fhooe-hypnode-dock
 docker compose up -d
 ```
 Access mongodb via commandline in container
 ```shell
-docker exec -it onmdb /bin/bash -c "mongosh"
+docker exec -it hypernode /bin/bash -c "mongosh"
 ```
 Access node container
 ```shell
-docker exec -it hypjs /bin/bash
+docker exec -it hypernode /bin/bash
 ```
 Subfolder node/ is mapped to /home/node in node container. 
 
