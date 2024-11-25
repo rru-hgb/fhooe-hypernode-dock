@@ -17,7 +17,7 @@ docker compose up -d
 ```
 Access mongodb via commandline in container
 ```shell
-docker exec -it hypernode /bin/bash -c "mongosh"
+docker exec -it hypernode_mongodb /bin/bash -c "mongosh"
 ```
 Access node container
 ```shell
