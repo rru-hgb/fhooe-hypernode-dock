@@ -1,4 +1,4 @@
-# Installation of fhooe-hypjs-dock
+# Installation of fhooe-hypnode-dock
 
 ## Get repo
 
