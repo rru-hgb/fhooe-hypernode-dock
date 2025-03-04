@@ -1,4 +1,4 @@
-FROM ubuntu:noble
+FROM ubuntu:latest
 
 LABEL maintainer="rimbert.rudisch-sommer@fh-hagenberg.at"
 
