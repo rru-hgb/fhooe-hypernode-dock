@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 # Installation of fhooe-hypernode-dock
->>>>>>> 5a5d1e46e6436c2ff217f5c080b2291cdcb909c8
 
 ## Get repo
 
@@ -14,9 +12,7 @@ git clone https://github.com/rru-hgb/fhooe-hypernode-dock.git
 ## Docker
 
 ```shell
-<<<<<<< HEAD
 cd fhooe-hypernode-dock
->>>>>>> 5a5d1e46e6436c2ff217f5c080b2291cdcb909c8
 docker compose up -d
 ```
 Access mongodb via commandline in container
