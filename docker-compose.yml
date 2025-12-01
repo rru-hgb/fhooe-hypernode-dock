@@ -3,8 +3,8 @@ services:
         image: mongo
         container_name: hypernode_mongodb
         environment: 
-            MONGO_INITDB_ROOT_USERNAME: 
-            MONGO_INITDB_ROOT_PASSWORD: 
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: geheim!
         volumes:
             - hypernode_mongodata:/data/db
             - hypernode_mongodata:/data/configdb
@@ -30,8 +30,8 @@ services:
             ME_CONFIG_BASICAUTH_PASSWORD: 
             ME_CONFIG_MONGODB_SERVER: mongo
             ME_CONFIG_MONGODB_PORT: 27017
-            ME_CONFIG_MONGODB_ADMINUSERNAME: 
-            ME_CONFIG_MONGODB_ADMINPASSWORD: 
+            ME_CONFIG_MONGODB_ADMINUSERNAME: root
+            ME_CONFIG_MONGODB_ADMINPASSWORD: geheim!
         #    - ME_CONFIG_MONGODB_ENABLE_ADMIN=root
         #    - ME_CONFIG_MONGODB_AUTH_DATABASE=admin
         depends_on:
